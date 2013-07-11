@@ -1,4 +1,4 @@
-Ultimate JS Rotate
+At least... A CSS Rotate
 ======
 
 A tool for CSS rotations using JavaScript.
