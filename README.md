@@ -7,4 +7,4 @@ It can rotate any HTML Element, even in Internet Explorer. Say goodbye to the cr
 Not matters if it's an image, a div, a text or whatever, just let it roll!...
 
 
-[http://rotate.kaisarcode.com/](KaisarCode Rotate Web)
+[KaisarCode Rotate Web](http://rotate.kaisarcode.com/)
