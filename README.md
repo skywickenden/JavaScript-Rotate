@@ -1,4 +1,4 @@
-At least... A CSS Rotate
+At least... A CSS Rotate without bullshit
 ======
 
 A tool for CSS rotations using JavaScript.
