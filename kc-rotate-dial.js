@@ -129,7 +129,10 @@ var kcRotateDial=function(elem){
                 var iesin = Math.sin(cursorRad);
                 Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
                 Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
-                elem.style.filter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+                if(navigator.appVersion.toLowerCase().match("msie 8.0"))
+                elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+                elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+
             }
             //assigning values to public properties
             output.rad=rotationRad;
