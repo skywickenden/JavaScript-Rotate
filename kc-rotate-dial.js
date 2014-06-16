@@ -7,7 +7,7 @@ Notes (IExplorer 8/9):
 	No Problem, on the real IE9 and IE8 Will work as intended, It's just a compatibility mode bug.
 
 2-	In some cases, you will see a black, or grey box rendered around your rotated object...
-	Yeap, it's the same as before... Don't pull your hair, On the real browser It's okay.
+	Yeap, it's the same as before... Don't pull your hair out, On the real browser It's okay.
 
 3-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
 	Because if not, IE will keep thinking that the element's center point is on its natural place, and we don't want that.
