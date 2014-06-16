@@ -1,34 +1,16 @@
-/*KAISARCODE ROTATE DIAL***************************************************
-*                                                                         *
-*   Copyright (C) 2012-2013  KaisarCode.com                               *
-*                                                                         *
-*   This program is free software: you can redistribute it and/or modify  *
-*   it under the terms of the GNU General Public License as published by  *
-*   the Free Software Foundation, either version 3 of the License, or     *
-*   (at your option) any later version.                                   *
-*                                                                         *
-*   This program is distributed in the hope that it will be useful,       *
-*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
-*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
-*   GNU General Public License for more details.                          *
-*                                                                         *
-*   You should have received a copy of the GNU General Public License     *
-*   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
-*                                                                         *
-***************************************************************************/
-
 /*
-Note for IExplorer:
-This script was tested on real Browsers, and it works!
+
+Note:
+This script was tested on the real Browsers, and it works!
 But, if you try to run it on a windows console, in other IE version... this will not work.
-Wait, it's not a code bug and definitely is not a problem... the thing is that CSS rotations (at least),
-doesn't works on this cases (For any library or implementation, it's a CSS engine problem).
+But it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation).
 Also, in some cases you can see that a black box can be rendered around your rotated object...
-Yeap, it's the same... No Problem, on the real IE9 and IE8 Will work like a charm, those are just compatibility mode bugs.
+Yeap, it's the same... No Problem, on the real IE9 and IE8 Will work as intended, those are just compatibility mode bugs.
+
 */
 
 var kcRotateDial=function(elem){
-    
+    var output={};
     //Preventing elem to being selected on IE
     if(document.all && !window.opera) elem.setAttribute("unselectable","on");
     //Public Properties
@@ -171,4 +153,7 @@ var kcRotateDial=function(elem){
     try{elem.addEventListener('touchstart',function(e){setDrag(e,true);})}catch(err){}
     try{document.addEventListener('touchend',function(e){setDrag(e,false);})}catch(err){}
     try{document.addEventListener('touchmove',function(e){rotate(e)})}catch(err){}
+    
+    //Output
+    return output;
 }
