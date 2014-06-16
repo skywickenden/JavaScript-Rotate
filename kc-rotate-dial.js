@@ -18,7 +18,7 @@
 ***************************************************************************/
 
 var kcRotateDial=function(elem){
-     var output=this;
+    var output=this;
     //Preventing elem to being selected on IE
     if(document.all && !window.opera) elem.setAttribute("unselectable","on");
     //Public Properties
@@ -87,7 +87,7 @@ var kcRotateDial=function(elem){
         size=getSize(elem);
         axis=getAxis(elem);
         cursor=getCursorPos(e);
-        rad=Math.atan2(cursor[1]-axis[1],cursor[0]-axis[0]);
+        try{rad=Math.atan2(cursor[1]-axis[1],cursor[0]-axis[0])}catch(err){};
         //correct the 90° of difference starting from the Y axis of the element
         rad+=maxRad/4;
         //transform opposite angle negative value, to possitive
@@ -119,21 +119,20 @@ var kcRotateDial=function(elem){
             rad=cursorRad;
             
             //applying rotation to element
+            elem.style.transform="rotate("+rotationRad+"rad)";
             elem.style.MozTransform="rotate("+rotationRad+"rad)";
             elem.style.WebkitTransform="rotate("+rotationRad+"rad)";
             elem.style.OTransform="rotate("+rotationRad+"rad)";
             elem.style.MsTransform="rotate("+rotationRad+"rad)";
+            
             //rotation Matrix for IExplorer
-            if(document.all && !window.opera){
-                var iecos = Math.cos(cursorRad);
-                var iesin = Math.sin(cursorRad);
-                Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
-                Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
-                if(navigator.appVersion.toLowerCase().match("msie 8.0"))
-                elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
-                elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+			var iecos = Math.cos(cursorRad);
+			var iesin = Math.sin(cursorRad);
+			Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
+			Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
+			elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+			elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
 
-            }
             //assigning values to public properties
             output.rad=rotationRad;
             output.deg=maxDeg*output.rad/(2*Math.PI);
@@ -163,4 +162,3 @@ var kcRotateDial=function(elem){
     try{document.addEventListener('touchend',function(e){setDrag(e,false);})}catch(err){}
     try{document.addEventListener('touchmove',function(e){rotate(e)})}catch(err){}
 }
-/* *********************************************************************************************************/
