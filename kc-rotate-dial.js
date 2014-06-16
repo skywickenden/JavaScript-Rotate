@@ -1,11 +1,15 @@
 /*
 
-Note:
-This script was tested on the real Browsers, and it works!
-But, if you try to run it on a windows console, in other IE version... this will not work.
-But it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation).
-Also, in some cases you can see that a black box can be rendered around your rotated object...
-Yeap, it's the same... No Problem, on the real IE9 and IE8 Will work as intended, those are just compatibility mode bugs.
+Notes (IExplorer 8/9):
+1-	This script was tested on the real Browsers, and it works!
+	But, if you try to run it on a windows console, in other IE version... this will not work.
+	But it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation).
+
+2-	In some cases, you can see that a black box can be rendered around your rotated object...
+	Yeap, it's the same as before... No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
+
+3-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
+	Because if not, IE will keep thinking that the element's center point is on its natural place, and we don't want that.
 
 */
 
