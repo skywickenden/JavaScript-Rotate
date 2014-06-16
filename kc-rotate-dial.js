@@ -28,7 +28,7 @@ Yeap, it's the same... No Problem, on the real IE9 and IE8 Will work like a char
 */
 
 var kcRotateDial=function(elem){
-    var output=this;
+    
     //Preventing elem to being selected on IE
     if(document.all && !window.opera) elem.setAttribute("unselectable","on");
     //Public Properties
