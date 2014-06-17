@@ -31,6 +31,11 @@ Notes (IExplorer 8/9):
 2-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
 	Because if not, IE will keep thinking that the element's center point is on its natural place, and trust me, we don't want that.
 
+3-	Make sure that the element to be rotated has the same width and height.
+	Because IExplorer will rotate the rendered element inside a fixed box with that dimensions.
+	If you rotate a rectangle, the element will get cutted off (like masked).
+	
+	To fix this, see notes at end of page.
 */
 
 var kcRotateDial=function(elem){
@@ -133,6 +138,7 @@ var kcRotateDial=function(elem){
             if(isNaN(rotationRad)) rotationRad=lastRad;
             if(rotationRad<0) rotationRad=maxRad;
             if(rotationRad>maxRad) rotationRad=0;
+            
             rad=cursorRad;
             
             //applying rotation to element
@@ -143,12 +149,12 @@ var kcRotateDial=function(elem){
             elem.style.MsTransform="rotate("+rotationRad+"rad)";
             
             //rotation Matrix for IExplorer
-	    var iecos = Math.cos(cursorRad);
-	    var iesin = Math.sin(cursorRad);
-	    Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
-	    Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
-	    elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
-	    elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+			var iecos = Math.cos(cursorRad);
+			var iesin = Math.sin(cursorRad);
+			Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
+			Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
+			elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+			elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
 
             //assigning values to public properties
             output.rad=rotationRad;
@@ -180,11 +186,63 @@ var kcRotateDial=function(elem){
     try{document.addEventListener('touchmove',function(e){rotate(e)})}catch(err){}
     
     //Fixing black box issue on IE9
-    dummy=document.createElement("div");
-    dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
-    if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
-    delete dummy;
+	dummy=document.createElement("div");
+	dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
+	if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
+	delete dummy;
     
     //Output
     return output;
 }
+
+/*
+	Fixing rectangular elements issues:
+	
+	Use a container large enough to wrap the element across all its rotation.
+	This would be like a canvas, with the visual parts in the exact middle of it.
+	And apply the rotation to the container.
+	In this case, You'll have to add the attribute unselectable="on" to the inner elements.
+	
+	Example 1:
+	--------------------------------------------------------------------
+	<style>
+	#elem {
+		width:350px;
+		height:225px;
+		background-color:orange;
+		text-align:center;
+		padding-top:125px;
+	}
+	</style>
+	<div id="elem" style="">
+		<img src="images/images.jpg" alt="" width="300" height="100" unselectable="on" />
+	</div>
+	--------------------------------------------------------------------
+	
+	Example 2:
+	--------------------------------------------------------------------
+	<style>
+		#elem{
+			display:table;
+			border:none;
+			background-color:orange;
+			width:300px;
+			height:300px;
+		}
+		#elem .elem-cell{
+			display:table-cell;
+			vertical-align:middle;
+			text-align:center;
+		}
+	</style>
+	<div id="elem">
+		<div class="elem-cell" unselectable="on">
+			<span class="visual-elem" unselectable="on">Some Text Here</span>
+		</div>
+	</div>
+	--------------------------------------------------------------------
+	
+	If you use text as content, it is better to give to the container a background color.
+	This way you'll prevent messed border transparencies (Proper from IExplorer).
+	
+*/
