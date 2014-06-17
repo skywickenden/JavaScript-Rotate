@@ -37,7 +37,7 @@ Notes (IExplorer 8/9):
 */
 
 function kcRotate(elem,deg){
-		var Dx;
+	var Dx;
         var Dy;
         var iecos;
         var iesin;
