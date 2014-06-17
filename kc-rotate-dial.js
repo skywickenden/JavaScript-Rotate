@@ -25,7 +25,7 @@ Notes (IExplorer 8/9):
 	No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
 
 2-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
-	Because if not, IE will keep thinking that the element's center point is on its natural place, and we don't want that.
+	Because if not, IE will keep thinking that the element's center point is on its natural place, and trust me, we don't want that.
 
 */
 
