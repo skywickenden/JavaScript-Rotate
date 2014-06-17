@@ -50,7 +50,7 @@ IE7 and higher, Firefox, Chrome, Safari, Opera, on Desktop, Mobile, Game Console
 
 ##Notes (IExplorer 8/9)##
 #####Hey, It Works, all right? But this is important:#####
-This script was tested on the real Browsers, and it works awesome. But, if you try to run it on compatibility mode (like, selecting IE version through the console) will not. And it's not because a bug in the code... the CSS rotations (at least), doesn't works on this case (For any library or implementation). No Problem, on the real IE8, IE9, IE10... Will work as intended, Is just a compatibility mode issue, proper from the IExplorer CSS engine, and hasn't solution yet (At least not that I know, If you find one... please tell us all).
+This script was tested on the real Browsers, and it works awesome. But, if you try to run it on compatibility mode (like, selecting IE version through the console) will not. And it's not because a bug in the code... the CSS rotations (at least), doesn't works on this case (For any library or implementation). No Problem, on the real IE8, IE9, IE10... Will work as intended, It's just a compatibility mode issue, proper from the IExplorer CSS engine, and hasn't solution yet (At least not that I know, If you find one... please tell us all).
 
 #####Just for Dial, and positioning#####
 Be careful to not reposition the rotated element directly, always put it into a container, and move the container. Because if not, IE will keep thinking that the element's center point is on its natural place, and trust me, we don't want that.
