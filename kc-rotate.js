@@ -18,6 +18,22 @@
 ***************************************************************************/
 
 /*
+Overview:
+KaisarCode Rotate is a library that allows the real rotation of any block and inline-block element in a Crossbrowser way.
+It was tested on major desktop, mobile, game console, and TV browsers... but should work in other devices, if that exists.
+
+Implementation:
+Just add this library inside the <head> of your HTML document, and (when your target element is loaded) execute
+it just by passing the DOM element, and the rotation degrees as parameter.
+
+--------------------------------------------------------------------
+var elem=document.getElementById("my-elem");
+kcRotate(elem, 63);
+--------------------------------------------------------------------
+
+Voilá.
+
+
 Tested on:
 IE7, IE8, IE9
 Firefox, Chrome, Safari... (nevermind)
