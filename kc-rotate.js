@@ -35,8 +35,9 @@ Voilá.
 
 
 Tested on:
-IE7, IE8, IE9
-Firefox, Chrome, Safari... (nevermind)
+IE7 and higher,
+Firefox, Chrome, Safari, Opera... (nevermind)
+On its desktop and mobile versions.
 
 Notes (IExplorer 8/9):
 1-	This script was tested on the real Browsers, and it works!
