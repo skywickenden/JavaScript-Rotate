@@ -32,7 +32,7 @@ Notes (IExplorer 8/9):
 	Because IExplorer will rotate the rendered element inside a fixed box with that dimensions.
 	If you rotate a rectangle, the element will get cutted off (like masked).
 	
-	To fix this, see notes at end of page.
+	If you really need to use a rectangular element, see notes at end of page.
 	
 */
 
