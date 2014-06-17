@@ -18,6 +18,10 @@
 ***************************************************************************/
 
 /*
+Tested on:
+IE7, IE8, IE9
+Firefox, Chrome, Safari... (nevermind)
+
 Notes (IExplorer 8/9):
 1-	This script was tested on the real Browsers, and it works!
 	But, if you try to run it on a windows console, in other IE version... this will not work.
