@@ -66,6 +66,7 @@ var kcRotateDial=function(elem){
     var maxPer=100;
     var Dx=[];
     var Dy=[];
+    var dummy;
     //Public Methods
     output.onchange=function(){};
     //Private Methods
