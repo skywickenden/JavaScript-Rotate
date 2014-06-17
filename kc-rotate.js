@@ -73,11 +73,11 @@ function kcRotate(elem,deg){
         elem.style.filter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx+", Dy="+Dy+", SizingMethod=auto expand)";
         elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx+", Dy="+Dy+", SizingMethod=auto expand)";
 
-		//Fixing black box issue on IE9
-		dummy=document.createElement("div");
+	//Fixing black box issue on IE9
+	dummy=document.createElement("div");
         dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
         if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
-		delete dummy;
+	delete dummy;
 }
 
 /*
