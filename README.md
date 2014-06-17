@@ -3,7 +3,7 @@ KaisarCode Rotate is a library that allows the real rotation of any block and in
 It was tested on major desktop, mobile, game console, and TV browsers... but should work in other devices too, if that exists.
 Here, we present different flavours:
 * A simple one, in which we can rotate an element to a fixed angle
-* A dynamic one, that we can grab with the cursor or touch, and slide its rotation as if was a Dial wheel.
+* A dynamic one, that we can grab with the cursor or touch, and slide its rotation as if it was a Dial wheel.
 
 ##Implementation##
 Just add this library inside the *<head>* of your HTML document, and (when your target element is loaded) execute
