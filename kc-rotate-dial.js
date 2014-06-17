@@ -182,7 +182,7 @@ var kcRotateDial=function(elem){
     dummy=document.createElement("div");
     dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
     if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
-    document.removeElement(dummy);
+    delete dummy;
     
     //Output
     return output;
