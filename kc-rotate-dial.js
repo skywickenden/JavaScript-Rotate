@@ -25,7 +25,7 @@ Firefox, Chrome, Safari... (nevermind)
 Notes (IExplorer 8/9):
 1-	This script was tested on the real Browsers, and it works!
 	But, if you try to run it on a windows console, in other IE version... this will not work.
-	But it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation).
+	And it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation).
 	No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
 
 2-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
