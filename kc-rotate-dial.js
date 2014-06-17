@@ -18,9 +18,26 @@
 ***************************************************************************/
 
 /*
+Overview:
+KaisarCode Rotate Dial is a library that allows the real rotation of any block and inline-block element using the mouse cursor or your finger.
+It was tested on major desktop, mobile, game console, and TV browsers... but should work in other devices, if that exists.
+
+Implementation:
+Just add this library inside the <head> of your HTML document, and (when your target element is loaded) execute
+it just by passing the DOM element as parameter.
+
+--------------------------------------------------------------------
+var elem=document.getElementById("my-elem");
+kcRotate(elem);
+--------------------------------------------------------------------
+
+Voilá.
+
+
 Tested on:
-IE7, IE8, IE9
-Firefox, Chrome, Safari... (nevermind)
+IE7 and higher,
+Firefox, Chrome, Safari, Opera... (nevermind)
+On its desktop and mobile versions.
 
 Notes (IExplorer 8/9):
 1-	This script was tested on the real Browsers, and it works!
