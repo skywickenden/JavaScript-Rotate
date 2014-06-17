@@ -20,11 +20,36 @@ kcRotateDial(elem);
 ```
 And Voilá.
 
+####KC Dial goodies####
+Aside from allow the element to be rotated by hand, KC Dial has several properties to make it more useful.
+Once we've initialized the rotational proces, we can retrieve data from it.
+Here is an example:
+
+```javascript
+var elem=document.getElementById("my-elem");
+var rotated=kcRotateDial(elem);
+
+rotated.onchange=function(){//->fires every time we move the element
+
+	var deg=rotated.deg; //->returns angle in degrees
+	var rad=rotated.rad; //->returns angle in radians
+	var per=rotated.per; //->returns angle in percentage
+	var fullRad=rotated.fullRad; //->returns absolute angle in radians (unlimited spins)
+	var fullDeg=rotated.fullDeg; //->returns absolute angle in degrees (unlimited spins)
+	var fullPer=rotated.fullPer; //->returns absolute angle in percentage (unlimited spins)
+	var spins=rotated.spin; //-> Amount of spins
+	var clockwise=rotated.clock; //-> Am I going clockwise?
+	
+	console.log(deg);
+}
+```
+
+
 ##Tested on##
 IE7 and higher, Firefox, Chrome, Safari, Opera, on Desktop, Mobile, Game Consoles, Smart TVs, and even on a potato...
 
 ##Notes (IExplorer 8/9)##
-1.	This script was tested on the real Browsers, and it works! But, if you try to run it on a windows console, in other IE version... this will not work. And it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation). No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
+1. This script was tested on the real Browsers, and it works! But, if you try to run it on a windows console, in other IE version... this will not work. And it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation). No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
 2. Make sure that the element to be rotated has the same width and height, because IExplorer will rotate the rendered element inside a fixed box with that dimensions. If you rotate a rectangle, the element will get cutted off (like masked).
 3. **(Just for Dial)**: Be careful to not reposition the rotated element directly, always put it into a container, and move the container. Because if not, IE will keep thinking that the element's center point is on its natural place, and trust me, we don't want that.
 
