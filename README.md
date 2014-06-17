@@ -46,7 +46,7 @@ In this case, You'll have to add the attribute ```unselectable="on"``` to the in
 }
 </style>
 <div id="elem">
-	<img src="images/rect.jpg" alt="" width="300" height="100" unselectable="on" />
+	<img src="rect.png" alt="" width="300" height="100" unselectable="on" />
 </div>
 ```
 	
