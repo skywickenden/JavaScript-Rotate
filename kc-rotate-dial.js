@@ -1,4 +1,4 @@
-/*KAISARCODE ROTATE ***************************************************
+/*KAISARCODE ROTATE DIAL ***************************************************
 *                                                                         *
 *   Copyright (C) 2012-2014  KaisarCode.com                               *
 *                                                                         *
@@ -175,10 +175,10 @@ var kcRotateDial=function(elem){
     try{document.addEventListener('touchmove',function(e){rotate(e)})}catch(err){}
     
     //Fixing black box issue on IE9
-    dummy=document.createElement("div");
-    dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
-    if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
-    document.removeElement(dummy);
+	dummy=document.createElement("div");
+	dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
+	if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
+	document.removeElement(dummy);
     
     //Output
     return output;
