@@ -27,7 +27,7 @@ IE7 and higher, Firefox, Chrome, Safari, Opera, on Desktop, Mobile, Game Console
 2. Make sure that the element to be rotated has the same width and height, because IExplorer will rotate the rendered element inside a fixed box with that dimensions. If you rotate a rectangle, the element will get cutted off (like masked).
 3. **(Just for Dial)**: Be careful to not reposition the rotated element directly, always put it into a container, and move the container. Because if not, IE will keep thinking that the element's center point is on its natural place, and trust me, we don't want that.
 
-###Fixing rectangular elements issues###
+###Fixing rectangular elements' issues###
 	
 Use a container large enough to wrap the element across all its rotational area.
 This would be sort of a canvas, with the visual parts in the exact middle of it.
