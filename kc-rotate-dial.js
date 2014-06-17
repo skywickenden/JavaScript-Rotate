@@ -28,7 +28,7 @@ it just by passing the DOM element as parameter.
 
 --------------------------------------------------------------------
 var elem=document.getElementById("my-elem");
-kcRotate(elem);
+kcRotateDial(elem);
 --------------------------------------------------------------------
 
 Voilá.
