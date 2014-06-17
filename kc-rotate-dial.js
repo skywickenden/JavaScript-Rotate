@@ -2,14 +2,11 @@
 
 Notes (IExplorer 8/9):
 1-	This script was tested on the real Browsers, and it works!
-	But, if you try to run it using the IExplorer console, in other IE version... this will not work.
-	It's not a code bug... this will happen to any CSS rotation implementation.
-	No Problem, on the real IE9 and IE8 Will work as intended, It's just a compatibility mode bug.
+	But, if you try to run it on a windows console, in other IE version... this will not work.
+	But it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation).
+	No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
 
-2-	In some cases, you will see a black, or grey box rendered around your rotated object...
-	Yeap, it's the same as before... Don't pull your hair out, On the real browser It's okay.
-
-3-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
+2-	Be careful to not reposition the rotated element directly, always put it into a container, and move the container.
 	Because if not, IE will keep thinking that the element's center point is on its natural place, and we don't want that.
 
 */
@@ -158,6 +155,12 @@ var kcRotateDial=function(elem){
     try{elem.addEventListener('touchstart',function(e){setDrag(e,true);})}catch(err){}
     try{document.addEventListener('touchend',function(e){setDrag(e,false);})}catch(err){}
     try{document.addEventListener('touchmove',function(e){rotate(e)})}catch(err){}
+    
+    //Fixing black box issue on IE9
+	dummy=document.createElement("div");
+	dummy.innerHTML='<!--[if gte IE 9]><br /><![endif]-->';
+	if(dummy.getElementsByTagName("br").length==1) elem.style.filter="none";
+	document.removeElement(dummy);
     
     //Output
     return output;
