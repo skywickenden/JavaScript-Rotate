@@ -130,6 +130,7 @@ var kcRotateDial=function(elem){
             cursorRad=getAngle(e);
             relativeRad=cursorRad-rad;
             var rotationRad=lastRad+relativeRad;
+            if(isNaN(rotationRad)) rotationRad=lastRad;
             if(rotationRad<0) rotationRad=maxRad;
             if(rotationRad>maxRad) rotationRad=0;
             rad=cursorRad;
@@ -142,12 +143,12 @@ var kcRotateDial=function(elem){
             elem.style.MsTransform="rotate("+rotationRad+"rad)";
             
             //rotation Matrix for IExplorer
-			var iecos = Math.cos(cursorRad);
-			var iesin = Math.sin(cursorRad);
-			Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
-			Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
-			elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
-			elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+	    var iecos = Math.cos(cursorRad);
+	    var iesin = Math.sin(cursorRad);
+	    Dx[0]=-(size[0]/2)*iecos + (size[1]/2)*iesin + (size[0]/2);
+	    Dx[1]=-(size[0]/2)*iesin - (size[1]/2)*iecos + (size[1]/2);
+	    elem.style.filter  ="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
+	    elem.style.msFilter="progid:DXImageTransform.Microsoft.Matrix(M11="+iecos+", M12="+-iesin+", M21="+iesin+", M22="+iecos+", Dx="+Dx[0]+", Dy="+Dx[1]+", SizingMethod=auto expand)";
 
             //assigning values to public properties
             output.rad=rotationRad;
