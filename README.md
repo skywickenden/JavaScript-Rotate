@@ -51,6 +51,7 @@ In this case, You'll have to add the attribute ```unselectable="on"``` to the in
 ```
 	
 #####Example 2#####
+Hey, with a stable-styled element it's better
 ```html
 <style>
 	#elem{
