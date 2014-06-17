@@ -20,9 +20,7 @@ kcRotateDial(elem);
 And Voilá.
 
 ##Tested on##
-IE7 and higher,
-Firefox, Chrome, Safari, Opera... (nevermind)
-On its desktop and mobile versions.
+IE7 and higher, Firefox, Chrome, Safari, Opera, on Desktop, Mobile, Game Consoles, Smart TVs, and even on a potato...
 
 ##Notes (IExplorer 8/9)##
 1.	This script was tested on the real Browsers, and it works! But, if you try to run it on a windows console, in other IE version... this will not work. And it's not a code bug... the CSS rotations (at least), doesn't works on this cases (For any library or implementation). No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
