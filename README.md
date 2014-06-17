@@ -49,7 +49,7 @@ rotated.onchange=function(){//->fires every time we move the element
 IE7 and higher, Firefox, Chrome, Safari, Opera, on Desktop, Mobile, Game Consoles, Smart TVs, and even on a potato...
 
 ##Notes (IExplorer 8/9)##
-#####Hey, It Works, all right?#####
+#####Hey, It Works, all right? But this is important:#####
 This script was tested on the real Browsers, and it works! But, if you try to run it on compatibility mode (like, selecting IE version through the console) will not. And it's not because a bug in the code... the CSS rotations (at least), doesn't works on this case (For any library or implementation). No Problem, on the real IE9 and IE8 Will work as intended, Is just a compatibility mode bug.
 
 #####Just for Dial, and positioning#####
