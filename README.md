@@ -45,7 +45,7 @@ In this case, You'll have to add the attribute ```unselectable="on"``` to the in
 	padding-top:125px;
 }
 </style>
-<div id="elem" style="">
+<div id="elem">
 	<img src="images/images.jpg" alt="" width="300" height="100" unselectable="on" />
 </div>
 ```
