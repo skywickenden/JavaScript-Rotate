@@ -100,8 +100,8 @@ function kcRotate(elem,deg){
 /*
 	Fixing rectangular elements issues:
 	
-	Use a container large enough to wrap the element across all its rotation.
-	This would be like a canvas, with the visual parts in the exact middle of it.
+	Use a container large enough to wrap the element across all its rotational area.
+	This would be sort of a canvas, with the visual parts in the exact middle of it.
 	And apply the rotation to the container.
 	In this case, You'll have to add the attribute unselectable="on" to the inner elements.
 	
