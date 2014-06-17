@@ -56,7 +56,7 @@ This script was tested on the real Browsers, and it works awesome. But, if you t
 Be careful to not reposition the rotated element directly, always put it into a container, and move the container. Because if not, IE will keep thinking that the element's center point is on its natural place, and trust me, we don't want that.
 
 #####Width and Height#####
-Make sure that the element to be rotated has the same width and height, because IExplorer will rotate the rendered element inside a fixed box with that dimensions. If you rotate a rectangle, the element will get cutted off (like masked). If you really need to use a rectangular-sized element, please read the section below.
+Make sure that the element to be rotated has the same width and height, because IExplorer will rotate the rendered element inside a fixed box with that dimensions. If you rotate a rectangle, the element will get cut off (like masked). If you really need to use a rectangular-sized element, please read the section below.
 
 ###Fixing rectangular elements' issues###
 	
