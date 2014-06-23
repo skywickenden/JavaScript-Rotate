@@ -79,6 +79,10 @@ In this case, You'll have to add the attribute ```unselectable="on"``` to the in
 <div id="elem">
 	<img src="rect.png" alt="" width="300" height="100" unselectable="on" />
 </div>
+<script>
+	var elem=document.getElementById("elem");
+	kcRotate(elem, 63);
+</script>
 ```
 	
 #####Example 2#####
@@ -103,5 +107,9 @@ Hey, with a table-styled element it's better
 		<span class="visual-elem" unselectable="on">They see me Rollin'...</span>
 	</div>
 </div>
+<script>
+	var elem=document.getElementById("elem");
+	kcRotate(elem, 63);
+</script>
 ```
 If you use text as content, it is better to give to the container a background color. This way you'll prevent messed border transparencies (Proper from IExplorer).
