@@ -1,5 +1,5 @@
 ##Overview##
-KaisarCode Rotate is a stand-alone (not framework-dependant) library that allows the real rotation of any block and inline-block element in a Crossbrowser way.
+KaisarCode Rotate is a stand-alone (not framework-dependant) library that allows the real rotation of any block or inline-block element in a Crossbrowser way.
 It was tested on major desktop, mobile, game console, and TV browsers... but should work in other devices too, if that exists.
 Here, we present different flavours:
 * A simple one, in which we can rotate an element to a fixed angle
