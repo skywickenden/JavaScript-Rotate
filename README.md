@@ -120,4 +120,4 @@ If you use text as content, it is better to give to the container a background c
 
 #####Kc Rotate Dial on JSFiddle#####
 
-https://jsfiddle.net/gysqqopd/4/
+https://jsfiddle.net/gysqqopd/5/
