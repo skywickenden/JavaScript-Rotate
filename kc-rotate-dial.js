@@ -1,4 +1,4 @@
-/*KAISARCODE MULTIPLE ELEMENT ACTIVATOR *************************************
+/*KAISARCODE ROTATE DIAL ****************************************************
 *                                                                           *
 *    Copyright (C) 2006 - 2015  KaisarCode.com                              *
 *                                                                           *
