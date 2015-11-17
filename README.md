@@ -69,7 +69,7 @@ This would be sort of a canvas, with the visual parts in the exact middle of it.
 And apply the rotation to the container.
 In this case, You'll have to add the attribute ```unselectable="on"``` to the inner elements.
 
-#####Example 1#####
+#####Code Example 1#####
 ```html
 <style>
 #elem {
@@ -89,7 +89,7 @@ In this case, You'll have to add the attribute ```unselectable="on"``` to the in
 </script>
 ```
 	
-#####Example 2#####
+#####Code Example 2#####
 Hey, with a table-styled element it's better
 ```html
 <style>
@@ -117,3 +117,7 @@ Hey, with a table-styled element it's better
 </script>
 ```
 If you use text as content, it is better to give to the container a background color. This way you'll prevent messed border transparencies (Proper from IExplorer).
+
+#####Kc Rotate Dial on JSFiddle#####
+
+https://jsfiddle.net/gysqqopd/4/
