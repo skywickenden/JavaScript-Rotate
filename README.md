@@ -20,6 +20,12 @@ kcRotateDial(elem);
 ```
 And Voilá.
 
+Note that:
+
+> Today (2015 - 2016), one can still use the first rotate function, but it is way better to do it directly applying CSS styles.
+> So, i really think in that function as educative-purpose only.
+> Doesn't happens the same with RotateDial, we still need JavaScript to achieve that drag-based functionality.
+
 ####KC Dial goodies####
 Aside from allow the element to be rotated by hand, KC Dial has several properties to make it more useful.
 Once we've initialized the rotational proces, we can retrieve data from it.
