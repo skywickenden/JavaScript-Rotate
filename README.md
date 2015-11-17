@@ -21,7 +21,7 @@ kcRotateDial(elem);
 And Voilá.
 
 > Today (2015 - 2016), one can still use the first rotate function, but it is way better to do it directly applying CSS styles.
-> So, i really think in that function as educative-purpose only.
+> So, I really think in that function as educative-purpose only.
 > Doesn't happens the same with RotateDial, we still need JavaScript to achieve that drag-based functionality.
 
 ####KC Dial goodies####
