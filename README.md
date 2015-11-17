@@ -11,11 +11,11 @@ it just by passing the DOM element, and the rotation degrees as parameter.
 
 ```javascript
 //KaisarCode Rotate
-var elem=document.getElementById("my-elem");
+var elem = document.getElementById("my-elem");
 kcRotate(elem, 63);
 
 //KaisarCode Rotate Dial
-var elem=document.getElementById("my-elem");
+var elem = document.getElementById("my-elem");
 kcRotateDial(elem);
 ```
 And Voilá.
@@ -30,19 +30,19 @@ Once we've initialized the rotational proces, we can retrieve data from it.
 Here is an example:
 
 ```javascript
-var elem=document.getElementById("my-elem");
-var rotated=kcRotateDial(elem);
+var elem = document.getElementById("my-elem");
+var rotated = kcRotateDial(elem);
 
 rotated.onchange=function(){//->fires every time we move the element
 
-	var deg=rotated.deg; //->returns angle in degrees
-	var rad=rotated.rad; //->returns angle in radians
-	var per=rotated.per; //->returns angle in percentage
-	var fullRad=rotated.fullRad; //->returns absolute angle in radians (unlimited spins)
-	var fullDeg=rotated.fullDeg; //->returns absolute angle in degrees (unlimited spins)
-	var fullPer=rotated.fullPer; //->returns absolute angle in percentage (unlimited spins)
-	var spins=rotated.spin; //-> Amount of spins
-	var clockwise=rotated.clock; //-> Am I going clockwise?
+	var deg = rotated.deg; //->returns angle in degrees
+	var rad = rotated.rad; //->returns angle in radians
+	var per = rotated.per; //->returns angle in percentage
+	var fullRad = rotated.fullRad; //->returns absolute angle in radians (unlimited spins)
+	var fullDeg = rotated.fullDeg; //->returns absolute angle in degrees (unlimited spins)
+	var fullPer = rotated.fullPer; //->returns absolute angle in percentage (unlimited spins)
+	var spins = rotated.spin; //-> Amount of spins
+	var clockwise = rotated.clock; //-> Am I going clockwise?
 	
 	console.log(deg);
 }
@@ -84,7 +84,7 @@ In this case, You'll have to add the attribute ```unselectable="on"``` to the in
 	<img src="rect.png" alt="" width="300" height="100" unselectable="on" />
 </div>
 <script>
-	var elem=document.getElementById("elem");
+	var elem = document.getElementById("elem");
 	kcRotate(elem, 63);
 </script>
 ```
@@ -112,7 +112,7 @@ Hey, with a table-styled element it's better
 	</div>
 </div>
 <script>
-	var elem=document.getElementById("elem");
+	var elem = document.getElementById("elem");
 	kcRotate(elem, 63);
 </script>
 ```
