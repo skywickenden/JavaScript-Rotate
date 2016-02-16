@@ -58,14 +58,14 @@ var kcRotateDial = function(elem) {
 		
         //prevent event's default action
         if(window.event) e = window.event;
-        if(e.preventDefault) { e.preventDefault() }else{ e.returnValue = false };
+        if(e.preventDefault) { e.preventDefault(); }else{ e.returnValue = false; }
         
     }
     function stopPropagation(e) {
 		
         //stp event propagation
         if(window.event) e = window.event;
-        if(e.stopPropagation) { e.stopPropagation() }else{ e.bubbles = false };
+        if(e.stopPropagation) { e.stopPropagation(); }else{ e.bubbles = false; }
         
     }
     function getPos(elem) {
@@ -99,7 +99,11 @@ var kcRotateDial = function(elem) {
         if(window.event) e = window.event;
         if(e.clientX) cursorPos = [e.clientX,e.clientY];
         if(e.pageX) cursorPos = [e.pageX,e.pageY];
-        try{ if(e.targetTouches[0]) cursorPos = [e.targetTouches[0].pageX,e.targetTouches[0].pageY] } catch(err) {};
+        try{ 
+          if(e.targetTouches[0]) {
+            cursorPos = [e.targetTouches[0].pageX,e.targetTouches[0].pageY];
+          }
+         } catch(err) {}
         return cursorPos;
         
     }
@@ -111,7 +115,9 @@ var kcRotateDial = function(elem) {
         size = getSize(elem);
         axis = getAxis(elem);
         cursor = getCursorPos(e);
-        try{rad = Math.atan2(cursor[1]-axis[1], cursor[0]-axis[0])} catch(err) {};
+        try{
+          rad = Math.atan2(cursor[1]-axis[1], cursor[0]-axis[0]);
+        } catch(err) {}
         //correct the 90° of difference starting from the Y axis of the element
         rad += maxRad/4;
         //transform opposite angle negative value, to possitive
@@ -143,7 +149,7 @@ var kcRotateDial = function(elem) {
             var rotationRad;
             cursorRad = getAngle(e);
             relativeRad = cursorRad - rad;
-            var rotationRad = lastRad + relativeRad;
+            rotationRad = lastRad + relativeRad;
             if(isNaN(rotationRad)) rotationRad = lastRad;
             if(rotationRad<0) rotationRad = maxRad;
             if(rotationRad>maxRad) rotationRad = 0;
@@ -192,19 +198,26 @@ var kcRotateDial = function(elem) {
     //Listen events
     if(elem.attachEvent) {
         
-        elem.attachEvent('onmousedown', function() { setDrag(0, true) });
-        document.attachEvent('onmouseup', function() { setDrag(0, false) });
-        document.attachEvent('onmousemove', function() { rotate(0) });
+        elem.attachEvent('onmousedown', function() { setDrag(0, true); });
+        document.attachEvent('onmouseup', function() { setDrag(0, false); });
+        document.attachEvent('onmousemove', function() { rotate(0); });
         
     }else if(elem.addEventListener) {
         
-        elem.addEventListener('mousedown', function(e) { setDrag(e, true) });
-        document.addEventListener('mouseup', function(e) { setDrag(e, false) });
-        document.addEventListener('mousemove', function(e) { rotate(e) });
+        elem.addEventListener('mousedown', function(e) { setDrag(e, true); });
+        document.addEventListener('mouseup', function(e) { setDrag(e, false); });
+        document.addEventListener('mousemove', function(e) { rotate(e); });
             
-        try{ elem.addEventListener('touchstart', function(e) { setDrag(e,true); }) } catch(err) {}
-        try{ document.addEventListener('touchend', function(e) { setDrag(e,false); }) } catch(err) {}
-        try{ document.addEventListener('touchmove', function(e) { rotate(e)}) } catch(err) {}
+        try{
+          document.addEventListener('touchend', function(e) { 
+            setDrag(e,false); 
+         	});
+        } catch(err) {}
+        try{
+          document.addEventListener('touchmove', function(e) {
+            rotate(e);
+          });
+        } catch(err) {}
         
     }
     
@@ -212,8 +225,7 @@ var kcRotateDial = function(elem) {
     dummy = document.createElement("div");
     dummy.innerHTML = '<!--[if gte IE 9]><br /><![endif]-->';
     if(dummy.getElementsByTagName("br").length == 1) elem.style.filter = "none";
-    delete dummy;
     
     //Output
     return output;
-}
+};
